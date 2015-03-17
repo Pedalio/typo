@@ -2,9 +2,11 @@
 
 <%= render "admin/shared/edit", { :form_type => "article", :form_action => { :action => "new", :id => @article.id , :class => ('autosave')} } %>
 
-<h4>Merge Articles</h4>
-<%= form_tag articles_merge_with_path, html: { name: "merge_with" } do %>
-    <%= label_tag :article_id, "Article ID: " %>
-    <%= text_field_tag :article_id %>
-    <%= submit_tag "Merge" %>
+<% if params[:action] == 'edit' %>
+    <h4>Merge Articles</h4>
+    <%= form_tag articles_merge_with_path, html: { name: "merge_with" } do %>
+        <%= label_tag :article_id, "Article ID: " %>
+        <%= text_field_tag :article_id %>
+        <%= submit_tag "Merge" %>
+    <% end %>
 <% end %>
