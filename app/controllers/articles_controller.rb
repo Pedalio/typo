@@ -12,6 +12,13 @@ class ArticlesController < ContentController
 
   helper :'admin/base'
 
+  def merge_with 
+    puts "YYYYYYYYYAAAAAAAAA"
+    current_article = Article.find(params[:id])
+    current_article.merge_with(params[:article_id])
+    redirect_to admin_content_path
+  end
+
   def index
     respond_to do |format|
       format.html { @limit = this_blog.limit_article_display }
@@ -41,7 +48,6 @@ class ArticlesController < ContentController
       end
       format.rss do
         auto_discovery_feed(:only_path => false)
-        render_articles_feed('rss')
       end
     end
   end
@@ -280,4 +286,5 @@ class ArticlesController < ContentController
       # TODO :Check in request_article type of DATA made in next step
     end
   end
+
 end

@@ -68,6 +68,8 @@ Rails.application.routes.draw do
   match 'articles/markup_help/:id', :to => 'articles#markup_help', :format => false
   match 'articles/tag', :to => 'articles#tag', :format => false
   match 'articles/category', :to => 'articles#category', :format => false
+  # Hw5 merge route
+  post '/articles/merge_with/:id', :to => 'articles#merge_with', :as => 'articles_merge_with'
 
   # SetupController
   match '/setup', :to => 'setup#index', :format => false
@@ -116,4 +118,5 @@ Rails.application.routes.draw do
   root :to  => 'articles#index', :format => false
 
   match '*from', :to => 'articles#redirect', :format => false
+
 end

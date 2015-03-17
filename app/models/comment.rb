@@ -32,7 +32,7 @@ class Comment < Feedback
     "Comment on #{article.title} by #{author}"
   end
 
-  protected
+  # just for a minute! protected
 
   def article_allows_feedback?
     return true if article.allow_comments?
