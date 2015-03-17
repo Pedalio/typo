@@ -72,7 +72,7 @@ class Article < Content
   end
 
   def merge_with(other_article_id)
-    other_article = Article.find other_article_id        
+    other_article = Article.where(id: other_article_id).first
     if other_article
         self.body = self.body + other_article.body
         # change owners of comment other_article.published_comments.each do
