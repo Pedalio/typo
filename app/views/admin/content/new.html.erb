@@ -4,9 +4,9 @@
 
 <% if params[:action] == 'edit' %>
     <h4>Merge Articles</h4>
-    <%= form_tag articles_merge_with_path, html: { name: "merge_with" } do %>
+    <%= form_tag articles_merge_with_path do %>
         <%= label_tag :article_id, "Article ID: " %>
         <%= text_field_tag :article_id %>
-        <%= submit_tag "Merge" %>
+        <%= submit_tag "Merge", name: 'merge_with' %>
     <% end %>
 <% end %>
