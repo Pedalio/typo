@@ -83,7 +83,7 @@ class Article < Content
             comment.save
         end
         self.save
-        other_article.destroy
+        other_article.destroy!
     end
   end
 
