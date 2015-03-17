@@ -15,7 +15,9 @@ class ArticlesController < ContentController
   def merge_with 
     puts "YYYYYYYYYAAAAAAAAA"
     current_article = Article.find(params[:id])
-    current_article.merge_with(params[:merge_with])
+    if current_user.login == 'admin'
+        current_article.merge_with(params[:merge_with])
+    end
     redirect_to admin_content_path
   end
 
