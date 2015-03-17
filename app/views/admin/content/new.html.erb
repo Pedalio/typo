@@ -6,7 +6,7 @@
     <h4>Merge Articles</h4>
     <%= form_tag articles_merge_with_path, name: 'merge_with' do %>
         <%= label_tag :article_id, "Article ID: " %>
-        <%= text_field_tag :article_id %>
+        <%= text_field_tag :article_id, nil, name: 'merge_with' %>
         <%= submit_tag "Merge" %>
     <% end %>
 <% end %>
